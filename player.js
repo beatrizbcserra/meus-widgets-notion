@@ -15,18 +15,18 @@ $(function () {
   const playPreviousTrackButton = $("#play-previous");
   const playNextTrackButton = $("#play-next");
   const albums = [
-    "Californication",
-    "Around the Fur",
-    "The Greatest Unkown",
-    "Graduation",
-    "Ailu"
+    "Easily",
+    "Be Quiet and Drive",
+    "Boy",
+    "Flash Lights",
+    "Colors"
   ];
   const trackNames = [
-    "Red Hot Chili PeppersEasily",
-    "Deftones - Be Quiet and Drive",
-    "King Gnu - Boy",
-    "Kanye West - Flash Lights",
-    "Flow - Colors"
+    "Red Hot Chili Peppers - Californication",
+    "Deftones - Around the Fur",
+    "King Gnu - The Greatest Unkown",
+    "Kanye West - Graduation",
+    "Flow - Ailu"
   ];
   const albumArtworks = ["_1", "_2", "_3", "_4", "_5"];
   const trackUrl = [
