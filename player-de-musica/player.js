@@ -15,18 +15,18 @@ $(function () {
   const playPreviousTrackButton = $("#play-previous");
   const playNextTrackButton = $("#play-next");
   const albums = [
-    "Me & You",
-    "Dawn",
-    "Electro Boy",
-    "Home",
-    "Proxy (Original Mix)"
+    "Californication",
+    "Around the Fur",
+    "The Greatest Unkown",
+    "Graduation",
+    "Ailu"
   ];
   const trackNames = [
-    "Alex Skrindo - Me & You",
-    "Skylike - Dawn",
-    "Kaaze - Electro Boy",
-    "Jordan Schor - Home",
-    "Martin Garrix - Proxy"
+    "Red Hot Chili PeppersEasily",
+    "Deftones - Be Quiet and Drive",
+    "King Gnu - Boy",
+    "Kanye West - Flash Lights",
+    "Flow - Colors"
   ];
   const albumArtworks = ["_1", "_2", "_3", "_4", "_5"];
   const trackUrl = [
