@@ -30,11 +30,11 @@ $(function () {
   ];
   const albumArtworks = ["_1", "_2", "_3", "_4", "_5"];
   const trackUrl = [
-    "player-de-musica/songs/1.mp3",
-    "player-de-musica/songs/2.mp3",
-    "player-de-musica/songs/3.mp3",
-    "player-de-musica/songs/4.mp3",
-    "player-de-musica/songs/5.mp3"
+    "1.mp3",
+    "2.mp3",
+    "3.mp3",
+    "4.mp3",
+    "5.mp3"
   ];
 
   let bgArtworkUrl,
