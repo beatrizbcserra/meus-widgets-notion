@@ -319,3 +319,10 @@ body {
 .button:hover i {
   color: #fff;
 }
+
+.control {
+  width: 25%; /* era 33.333% */
+  float: left;
+  padding: 12px 0;
+}
+
