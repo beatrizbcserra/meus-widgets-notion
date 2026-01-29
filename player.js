@@ -14,9 +14,6 @@ $(function () {
   const tTime = $("#track-length");
   const playPreviousTrackButton = $("#play-previous");
   const playNextTrackButton = $("#play-next");
-  const repeatButton = $("#repeat-button");
-  let repeatMode = false; 
-
   const albums = [
     "Easily",
     "Be Quiet and Drive",
@@ -157,7 +154,7 @@ $(function () {
 
     seekBar.width(playProgress + "%");
 
-    if (playProgress == 100 && !repeatMode) {
+    if (playProgress == 100) {
       i.attr("class", "fa fa-play");
       seekBar.width(0);
       tProgress.text("00:00");
@@ -251,21 +248,7 @@ $(function () {
     playNextTrackButton.on("click", function () {
       selectTrack(1);
     });
-    repeatButton.on("click", toggleRepeat);
-
   }
-  function toggleRepeat() {
-  repeatMode = !repeatMode;
-
-  if (repeatMode) {
-    audio.loop = true; 
-    repeatButton.addClass("active");
-  } else {
-    audio.loop = false;
-    repeatButton.removeClass("active");
-  }
-}
-
 
   initPlayer();
 });
