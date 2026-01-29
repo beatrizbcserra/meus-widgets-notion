@@ -15,18 +15,18 @@ $(function () {
   const playPreviousTrackButton = $("#play-previous");
   const playNextTrackButton = $("#play-next");
   const albums = [
-    "Easily",
-    "Be Quiet and Drive",
-    "Boy",
-    "Flash Lights",
-    "Colors"
+    "us",
+    "sorry, I like you",
+    "bossa uh",
+    "romance",
+    "cute"
   ];
   const trackNames = [
-    "Red Hot Chili Peppers - Californication",
-    "Deftones - Around the Fur",
-    "King Gnu - The Greatest Unkown",
-    "Kanye West - Graduation",
-    "Flow - Ailu"
+    "korous",
+    "burbank",
+    "burbank",
+    "android 52",
+    "rose"
   ];
   const albumArtworks = ["_1", "_2", "_3", "_4", "_5"];
   const trackUrl = [
