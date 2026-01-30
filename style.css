@@ -292,7 +292,7 @@ body {
 }
 
 #player-controls {
-  width: 260px;
+  width: 310px;
   height: 100%;
   margin: 0 5px 0 145px;
   float: right;
@@ -300,7 +300,7 @@ body {
 }
 
 .control {
-  width: 33.333%;
+  width: 25%;
   float: left;
   padding: 12px 0;
 }
@@ -343,6 +343,38 @@ body {
 
 .button:active {
   transform: translateY(0) scale(1);
+}
+
+/* Botão de repetir com estados */
+#repeat-button[data-repeat="off"] i {
+  color: #e0e0e0;
+}
+
+#repeat-button[data-repeat="all"] i,
+#repeat-button[data-repeat="one"] i {
+  color: #ff8ab8;
+}
+
+#repeat-button[data-repeat="one"]::after {
+  content: "1";
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #ff8ab8;
+  background: #fff;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffe8f5;
+}
+
+#repeat-button {
+  position: relative;
 }
 
 /* Adicionar um efeito de brilho suave */
