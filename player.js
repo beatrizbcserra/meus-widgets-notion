@@ -14,19 +14,20 @@ $(function () {
   const tTime = $("#track-length");
   const playPreviousTrackButton = $("#play-previous");
   const playNextTrackButton = $("#play-next");
+  const repeatButton = $("#repeat-button");
   const albums = [
-    "us",
-    "sorry, I like you",
-    "bossa uh",
-    "romance",
-    "cute"
+    "Easily",
+    "Be Quiet and Drive",
+    "Boy",
+    "Flash Lights",
+    "Colors"
   ];
   const trackNames = [
-    "korous",
-    "burbank",
-    "burbank",
-    "android 52",
-    "rose"
+    "Red Hot Chili Peppers - Californication",
+    "Deftones - Around the Fur",
+    "King Gnu - The Greatest Unkown",
+    "Kanye West - Graduation",
+    "Flow - Ailu"
   ];
   const albumArtworks = ["_1", "_2", "_3", "_4", "_5"];
   const trackUrl = [
@@ -54,7 +55,8 @@ $(function () {
     nTime = 0,
     buffInterval = null,
     tFlag = false,
-    currIndex = -1;
+    currIndex = -1,
+    repeatMode = "off"; // off, all, one
 
   function playPause() {
     setTimeout(function () {
@@ -155,11 +157,28 @@ $(function () {
     seekBar.width(playProgress + "%");
 
     if (playProgress == 100) {
-      i.attr("class", "fa fa-play");
-      seekBar.width(0);
-      tProgress.text("00:00");
-      albumArt.removeClass("buffering").removeClass("active");
-      clearInterval(buffInterval);
+      // Lógica de repetição
+      if (repeatMode == "one") {
+        // Repetir a música atual
+        audio.currentTime = 0;
+        audio.play();
+      } else if (repeatMode == "all") {
+        // Tocar próxima música (ou primeira se for a última)
+        if (currIndex < albumArtworks.length - 1) {
+          selectTrack(1);
+        } else {
+          currIndex = -1;
+          selectTrack(1);
+        }
+      } else {
+        // Sem repetição - parar
+        i.attr("class", "fa fa-play");
+        seekBar.width(0);
+        tProgress.text("00:00");
+        albumArt.removeClass("buffering").removeClass("active");
+        clearInterval(buffInterval);
+        playerTrack.removeClass("active");
+      }
     }
   }
 
@@ -172,6 +191,19 @@ $(function () {
       bTime = new Date();
       bTime = bTime.getTime();
     }, 100);
+  }
+
+  function toggleRepeat() {
+    if (repeatMode == "off") {
+      repeatMode = "all";
+      repeatButton.attr("data-repeat", "all");
+    } else if (repeatMode == "all") {
+      repeatMode = "one";
+      repeatButton.attr("data-repeat", "one");
+    } else {
+      repeatMode = "off";
+      repeatButton.attr("data-repeat", "off");
+    }
   }
 
   function selectTrack(flag) {
@@ -248,6 +280,7 @@ $(function () {
     playNextTrackButton.on("click", function () {
       selectTrack(1);
     });
+    repeatButton.on("click", toggleRepeat);
   }
 
   initPlayer();
